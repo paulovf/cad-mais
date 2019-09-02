@@ -1,0 +1,40 @@
+<div class="container-formulario">
+  <form id="formulario-pesquisar-funcionario" name="funcionario" action="" method="POST">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Data Inicial:</label>
+        <input id="data-inicial" name="data_inicial" type="text" class="form-control" required />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Data FInal:</label>
+        <input id="data-final" name="data_final" type="text" class="form-control" required />
+      </div>
+    </div>
+    <div class="campo_botoes">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <button id="gerar" class="btn btn-info botao-novo"><i class="fas fa-print"></i>&nbsp;&nbsp;Gerar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <table class="table table-bordered tabela-dados">
+    <thead class="cabecalho-tabela">
+    <tr class="active">
+      <td>&nbsp;</td>
+      <td>Nome</td>
+      <td>CPF</td>
+      <td>Data Nascimento</td>
+    </tr>
+    </thead>
+
+    <tbody class="corpo-tabela">
+    <tr>
+      <td class="alinhamento-centro">1</td>
+      <td class="alinhamento-esquerdo">José Trajano</td>
+      <td class="alinhamento-centro">123.456.789-01</td>
+      <td class="alinhamento-centro">01/09/1910</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

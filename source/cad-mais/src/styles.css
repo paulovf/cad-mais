@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+.logo-topo{
+  width: 60px;
+  height: 60px;
+}
+
+.nome-site-topo{
+  font-size: 22px;
+  color: #17b1cd;
+}
+
+.azul {
+  color: #17b1cd !important;;
+}
+
+.amarelo {
+  color: #e0a61c !important;;
+}
+
+.branco {
+  color: #fff !important;;
+}
+
+.fundo-azul {
+  background: #17b1cd !important;
+}
+
+.botao-azul {
+  background: #17b1cd !important;
+  border-color: #17b1cd !important;
+}
+
+.botao-azul:hover {
+  background: #e0a61c !important;
+  border-color: #e0a61c !important;
+}
+
+.bg-primary{
+  background: #17b1cd !important;
+  border-color: #17b1cd !important;
+}
+
+.dropdown-item:hover{
+  background: #e0a61c !important;
+}
+
+.img-icon-block::before{
+  background-color: #17b1cd !important;
+}

@@ -1,0 +1,30 @@
+<div class="container-pagina-tabela">
+  <label class="texto-titulo-tabela">Funcionários</label>
+  <div class="container-botoes-pesquisa">
+    <button id="novo" [routerLink]="['/novo_funcionario']" class="btn btn-info botao-novo"><i class="fas fa-file"></i>&nbsp;&nbsp;Novo Funcionário</button>
+    <button id="relatorio" [routerLink]="['/relatorio_funcionario']" class="btn btn-secondary botao-relatorio"><i class="fas fa-print"></i>&nbsp;&nbsp;Relatório</button>
+    <div class="input-group mb-3 container-campo-pesquisa">
+      <div class="input-group-prepend fundo-azul">
+        <span class="input-group-text fundo-azul" id="basic-addon1"><i class="fas fa-search branco"></i></span>
+      </div>
+      <input type="text" class="form-control campo-pesquisa" placeholder="Pesquisar..." id="campo-pesquisa" onkeyup="pesquisaTabela();">
+    </div>
+  </div>
+
+  <table id="tabela-dados" class="table table-bordered tabela-dados">
+    <tr class="cabecalho-tabela">
+      <th>&nbsp;</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Data Nascimento</th>
+      <th>Login</th>
+    </tr>
+    <tr class="corpo-tabela" *ngFor="let func of funcionarios">
+      <td class="alinhamento-centro">{{func.id}}</td>
+      <td class="alinhamento-esquerdo">{{func.nome}}</td>
+      <td class="alinhamento-centro">{{func.cpf}}</td>
+      <td class="alinhamento-centro">{{func.dataNascomento}}</td>
+      <td class="alinhamento-centro">{{func.login}}</td>
+    </tr>
+  </table>
+</div>

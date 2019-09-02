@@ -16,9 +16,12 @@
     "@angular/compiler": "~8.2.4",
     "@angular/core": "~8.2.4",
     "@angular/forms": "~8.2.4",
+    "@angular/http": "^7.2.15",
     "@angular/platform-browser": "~8.2.4",
     "@angular/platform-browser-dynamic": "~8.2.4",
     "@angular/router": "~8.2.4",
+    "angular-br-filters": "^0.7.0",
+    "angular-input-masks": "^4.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
