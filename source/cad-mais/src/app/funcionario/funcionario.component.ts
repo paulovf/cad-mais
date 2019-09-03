@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Funcionario} from './funcionario.';
+import {Http} from '@angular/http';
+import {FuncionarioService} from './funcionario.service';
 
 @Component({
   selector: 'app-funcionario',
@@ -8,8 +10,8 @@ import {Funcionario} from './funcionario.';
 })
 export class FuncionarioComponent implements OnInit {
   funcionarios: Funcionario[] = [];
-  constructor() {
-    let func = new Funcionario();
+  constructor(private funcionarioService: FuncionarioService) {
+    /*let func = new Funcionario();
     func.id = 1;
     func.nome = 'Ulisses Costa';
     func.cpf = '123.456.789-01';
@@ -25,10 +27,52 @@ export class FuncionarioComponent implements OnInit {
     func.dataNascomento = '02/10/1963';
     func.login = 'trajano';
     func.senha = '321';
-    this.funcionarios.push(func);
+    this.funcionarios.push(func);*/
+    /*const url = 'http://localhost:7771/cadmais/rest/api/listar_funcionarios';
+
+    this.http.get(url).subscribe((data) => {
+      const response = data.json();
+      console.log(response);
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < response.length; i++) {
+        func = new Funcionario();
+        func.id = response[i].id_funcionario;
+        func.nome = response[i].nome;
+        func.cpf = response[i].cpf;
+        func.dataNascomento = response[i].data_nascimento;
+        func.login = response[i].login;
+        func.senha = response[i].senha;
+        this.funcionarios.push(func);
+      }
+    });*/
+    console.log('000');
   }
 
   ngOnInit() {
+    console.log('111');
+    // this.listar();
+    console.log('333');
+    this.funcionarioService.listar()
+      .subscribe((response: Response) => this.funcionarios = response.json().data);
   }
 
+  /*listar() {
+    console.log('222');
+    const url = 'http://localhost:7771/cadmais/rest/api/listar_funcionarios';
+    this.httpClient.get(url).subscribe((data) => {
+      console.log(data);
+      const response = data.json();
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < response.length; i++) {
+        const func = new Funcionario();
+        func.id = response[i].id_funcionario;
+        func.nome = response[i].nome;
+        func.cpf = response[i].cpf;
+        func.dataNascomento = response[i].data_nascimento;
+        func.login = response[i].login;
+        func.senha = response[i].senha;
+        this.funcionarios.push(func);
+      }
+    });
+  }*/
 }

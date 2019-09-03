@@ -9,6 +9,7 @@ import { NovoFuncionarioModule } from './funcionario/novo-funcionario.module';
 import { PesquisaFuncionarioModule } from './funcionario/pesquisa-funcionario.module';
 import { RelatorioFuncionarioModule } from './funcionario/relatorio-funcionario.module';
 import {HttpModule} from '@angular/http';
+import {HttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [

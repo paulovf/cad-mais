@@ -4,6 +4,7 @@ import { FuncionarioComponent } from './funcionario.component';
 import { FuncionarioRoutingModule } from './funcionario-routing.module';
 import {NovoFuncionarioComponentService} from './novo-funcionario.component.service';
 import {FormsModule} from '@angular/forms';
+import {FuncionarioService} from './funcionario.service';
 
 
 @NgModule({
@@ -19,6 +20,6 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     FuncionarioComponent
   ],
-  providers: [ NovoFuncionarioComponentService ]
+  providers: [ NovoFuncionarioComponentService, FuncionarioService ]
 })
 export class FuncionarioModule { }

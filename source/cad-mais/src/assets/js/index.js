@@ -49,7 +49,3 @@ function mData(data){
   data=data.replace(/(\d{2})(\d)/,"$1/$2")
   return data
 }
-
-createDateTimePlugin([{
-  id: "data_nascimento", data: {acceptsAtCurrentDate: true}
-}]);
