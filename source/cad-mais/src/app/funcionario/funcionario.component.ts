@@ -50,14 +50,14 @@ export class FuncionarioComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.listarFuncionarios();
+    this.listarFuncionarios();
   }
 
   listarFuncionarios() {
     this.funcionarioService.listar()
       .subscribe((response: Response) => {
         console.log(response);
-        // this.funcionarios = response.json().data;
+        this.funcionarios = response.json();
       });
     /*console.log('222');
     const url = 'http://localhost:7771/cadmais/rest/api/listar_funcionarios';
