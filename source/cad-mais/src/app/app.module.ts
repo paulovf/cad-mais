@@ -8,8 +8,8 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
 import { NovoFuncionarioModule } from './funcionario/novo-funcionario.module';
 import { PesquisaFuncionarioModule } from './funcionario/pesquisa-funcionario.module';
 import { RelatorioFuncionarioModule } from './funcionario/relatorio-funcionario.module';
-import {HttpModule} from '@angular/http';
-import {HttpClient} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import {HttpClient} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpModule,
+    FormsModule,
     VeiculoModule,
     FuncionarioModule,
     NovoFuncionarioModule,

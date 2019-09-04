@@ -1,7 +1,7 @@
 <div class="container-pagina-tabela">
   <label class="texto-titulo-tabela">Funcionários</label>
   <div class="container-botoes-pesquisa">
-    <button id="novo" [routerLink]="['/novo_funcionario']" class="btn btn-info botao-novo"><i class="fas fa-file"></i>&nbsp;&nbsp;Novo Funcionário</button>
+    <button id="novo" (click)="listarFuncionarios()" class="btn btn-info botao-novo"><i class="fas fa-file"></i>&nbsp;&nbsp;Novo Funcionário</button>
     <button id="relatorio" [routerLink]="['/relatorio_funcionario']" class="btn btn-secondary botao-relatorio"><i class="fas fa-print"></i>&nbsp;&nbsp;Relatório</button>
     <div class="input-group mb-3 container-campo-pesquisa">
       <div class="input-group-prepend fundo-azul">

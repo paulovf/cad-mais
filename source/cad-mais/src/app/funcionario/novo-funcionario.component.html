@@ -12,7 +12,7 @@
       <div class="form-group col-md-4">
         <label>CPF:</label>
         <input id="cpf" name="cpf" type="text" class="form-control" #cpf="ngModel" ngModel minlength="14" maxlength="14" required onkeydown="javascript: fMasc( this, mCPF );" />
-        <div *ngIf="cpf.errors?.required && cpf.touched" class="error">
+        <div id="erro-cpf" *ngIf="cpf.errors?.required && cpf.touched" class="error">
           CPF inválido
         </div>
       </div>

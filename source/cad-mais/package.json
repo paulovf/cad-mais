@@ -23,7 +23,9 @@
     "angular-br-filters": "^0.7.0",
     "angular-input-masks": "^4.4.1",
     "rxjs": "~6.4.0",
+    "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
+    "xjs": "^0.1.6",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

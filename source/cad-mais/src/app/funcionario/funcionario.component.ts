@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Funcionario} from './funcionario.';
-import {Http} from '@angular/http';
+
 import {FuncionarioService} from './funcionario.service';
+import {Funcionario} from './Funcionario.type';
+import { Response } from '@angular/http';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-funcionario',
@@ -45,19 +47,19 @@ export class FuncionarioComponent implements OnInit {
         this.funcionarios.push(func);
       }
     });*/
-    console.log('000');
   }
 
   ngOnInit() {
-    console.log('111');
-    // this.listar();
-    console.log('333');
-    this.funcionarioService.listar()
-      .subscribe((response: Response) => this.funcionarios = response.json().data);
+    // this.listarFuncionarios();
   }
 
-  /*listar() {
-    console.log('222');
+  listarFuncionarios() {
+    this.funcionarioService.listar()
+      .subscribe((response: Response) => {
+        console.log(response);
+        // this.funcionarios = response.json().data;
+      });
+    /*console.log('222');
     const url = 'http://localhost:7771/cadmais/rest/api/listar_funcionarios';
     this.httpClient.get(url).subscribe((data) => {
       console.log(data);
@@ -73,6 +75,6 @@ export class FuncionarioComponent implements OnInit {
         func.senha = response[i].senha;
         this.funcionarios.push(func);
       }
-    });
-  }*/
+    });*/
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import {NovoFuncionarioComponentService} from './novo-funcionario.component.service';
+import { NgForm } from '@angular/forms';
+import {FuncionarioService} from './funcionario.service';
 
 @Component({
   selector: 'app-novo-funcionario',
@@ -8,16 +8,13 @@ import {NovoFuncionarioComponentService} from './novo-funcionario.component.serv
   styleUrls: ['./funcionario.component.css']
 })
 export class NovoFuncionarioComponent implements OnInit {
-
-  constructor(private contatoComponentService: NovoFuncionarioComponentService) { }
+  constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit() {
   }
 
-  salvarFuncionario(contatoForm: NgForm) {
-    console.log(contatoForm.value);
-
-    this.contatoComponentService.enviarContato(contatoForm.value).subscribe((response) => {
+  salvarFuncionario(funcionarioForm: NgForm) {
+    this.funcionarioService.salvar(funcionarioForm.value).subscribe((response) => {
       console.log('Response: ' + response);
       console.log('Fim');
     });
