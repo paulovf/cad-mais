@@ -1,17 +1,18 @@
 <div class="container-formulario">
+    <label class="texto-titulo-tabela">Cadastrar novo funcionário</label><br />
   <form #f="ngForm" (ngSubmit)="salvarFuncionario(f)">
-    <input id="id_funcionario" name="id_funcionario" type="hidden" value="" />
+    <input id="id_funcionario" name="id_funcionario" type="hidden" value="" value="{{funcionario?.idFuncionario}}" />
     <div class="form-row">
       <div class="form-group col-md-7">
         <label>Nome Funcionário:</label>
-        <input id="nome" name="nome" type="text" class="form-control" #nome="ngModel" ngModel minlength="2" required />
+        <input id="nome" name="nome" type="text" class="form-control" #nome="ngModel" ngModel minlength="2" required value="{{funcionario?.nome}}"/>
         <div *ngIf="nome.errors?.required && nome.touched" class="error">
           O nome é obrigatório
         </div>
       </div>
       <div class="form-group col-md-4">
         <label>CPF:</label>
-        <input id="cpf" name="cpf" type="text" class="form-control" #cpf="ngModel" ngModel minlength="14" maxlength="14" required onkeydown="javascript: fMasc( this, mCPF );" />
+        <input id="cpf" name="cpf" type="text" class="form-control" #cpf="ngModel" ngModel minlength="14" maxlength="14" required value="{{funcionario?.cpf}}" onkeydown="javascript: fMasc( this, mCPF );" />
         <div id="erro-cpf" *ngIf="cpf.errors?.required && cpf.touched" class="error">
           CPF inválido
         </div>
@@ -20,7 +21,7 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Data de Nascimento:</label>
-        <input id="data_nascimento" name="data_nascimento" type="text" class="form-control datetime_plugi" #data_nascimento="ngModel" ngModel minlength="10" maxlength="10" required onkeydown="javascript: fMasc( this, mData );" />
+        <input id="data_nascimento" name="data_nascimento" type="text" class="form-control datetime_plugi" #data_nascimento="ngModel" ngModel minlength="10" maxlength="10" required value="{{funcionario?.dataNascimento}}" onkeydown="javascript: fMasc( this, mData );" />
         <div *ngIf="data_nascimento.errors?.required && data_nascimento.touched" class="error">
           Data de nascimento inválida
         </div>
@@ -29,14 +30,14 @@
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Login:</label>
-        <input id="login" name="login" type="text" class="form-control" #login="ngModel" ngModel minlength="3" required/>
+        <input id="login" name="login" type="text" class="form-control" #login="ngModel" ngModel minlength="3" value="{{funcionario?.login}}" required/>
         <div *ngIf="login.errors?.required && login.touched" class="error">
           Login inválido
         </div>
       </div>
       <div class="form-group col-md-4">
         <label>Senha:</label>
-        <input id="senha" name="senha" type="password" class="form-control" #senha="ngModel" ngModel minlength="3" required />
+        <input id="senha" name="senha" type="password" class="form-control" #senha="ngModel" ngModel minlength="3" value="{{funcionario?.senha}}" required />
         <div *ngIf="senha.errors?.required && senha.touched" class="error">
           Senha inválida
         </div>

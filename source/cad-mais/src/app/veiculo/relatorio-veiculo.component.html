@@ -1,5 +1,5 @@
 <div class="container-formulario">
-  <label class="texto-titulo-tabela">Relatório de aniversariantes por período</label><br />
+  <label class="texto-titulo-tabela">Veículos ativados período</label><br />
   <form #f="ngForm" (ngSubmit)="relatorio(f)">
     <div class="form-row">
       <div class="form-group col-md-4">
@@ -28,13 +28,15 @@
   <table id="tabela-dados" class="table table-bordered tabela-dados">
     <tr class="cabecalho-tabela">
       <th>ID</th>
-      <th>Nome</th>
-      <th>Data Nascimento</th>
+      <th>Placa</th>
+      <th>Data Cadastro</th>
+      <th>Ativo</th>
     </tr>
-    <tr class="corpo-tabela" *ngFor="let func of funcionarios">
-      <td class="alinhamento-centro">{{func.idFuncionario}}</td>
-      <td class="alinhamento-esquerdo">{{func.nome}}</td>
-      <td class="alinhamento-centro">{{func.dataNascimento}}</td>
+    <tr class="corpo-tabela" *ngFor="let veic of veiculos">
+      <td class="alinhamento-centro">{{veic.idVeiculo}}</td>
+      <td class="alinhamento-centro">{{veic.placa}}</td>
+      <td class="alinhamento-centro">{{veic.dataCadastro}}</td>
+      <td class="alinhamento-centro">{{veic.ativo}}</td>
     </tr>
   </table>
 </div>

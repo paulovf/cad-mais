@@ -93,3 +93,8 @@ function validaDataNascimento(data){
    else
     return false;
 }
+
+function editarFuncionario(idFuncionario){
+  console.log("1111");
+  location.href = "/novo_funcionario?id_funcionario=" + idFuncionario;
+}

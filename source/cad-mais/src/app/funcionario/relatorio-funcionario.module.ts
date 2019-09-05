@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RelatorioFuncionarioComponent } from './relatorio-funcionario.component';
 import { RelatorioFuncionarioRoutingModule } from './relatorio-funcionario-routing.module';
-
+import { FuncionarioModule } from './funcionario.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,8 @@ import { RelatorioFuncionarioRoutingModule } from './relatorio-funcionario-routi
   ],
   imports: [
     CommonModule,
-    RelatorioFuncionarioRoutingModule
+    RelatorioFuncionarioRoutingModule,
+    FuncionarioModule
   ],
   exports: [
     RelatorioFuncionarioComponent

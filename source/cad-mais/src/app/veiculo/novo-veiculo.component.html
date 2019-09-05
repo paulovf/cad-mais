@@ -1,0 +1,90 @@
+<div class="container-formulario">
+    <label class="texto-titulo-tabela">Cadastrar novo veículo</label><br />
+  <form #f="ngForm" (ngSubmit)="salvarVeiculo(f)">
+    <input id="id_veiculo" name="id_veiculo" type="hidden" value="" value="{{veiculo?.idVeiculo}}" />
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label>Placa:</label>
+        <input id="placa" name="placa" type="text" class="form-control" #placa="ngModel" ngModel minlength="7" maxlength="8" required value="{{veiculo?.placa}}" />
+        <div *ngIf="placa.errors?.required && placa.touched" class="error">
+          A placa é obrigatória
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Ativo:</label>
+        <input id="ativo" name="ativo" type="text" class="form-control" #ativo="ngModel" ngModel minlength="1" maxlength="1" required value="{{veiculo?.ativo}}" />
+        <div *ngIf="ativo.errors?.required && ativo.touched" class="error">
+          Status inválido
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Ano Fabricação:</label>
+        <input id="anoFabricacao" name="anoFabricacao" type="text" class="form-control" #anoFabricacao="ngModel" ngModel minlength="4" maxlength="4" required value="{{veiculo?.anoFabricacao}}" />
+        <div *ngIf="anoFabricacao.errors?.required && anoFabricacao.touched" class="error">
+          O ano de fabricação é obrigatório
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label>Ano Modelo:</label>
+        <input id="anoModelo" name="anoModelo" type="text" class="form-control" #anoModelo="ngModel" ngModel minlength="4" maxlength="4" required value="{{veiculo?.anoModelo}}" />
+        <div *ngIf="anoModelo.errors?.required && anoModelo.touched" class="error">
+            O ano modelo é obrigatório
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Chassi:</label>
+          <input id="chassi" name="chassi" type="text" class="form-control" #chassi="ngModel" ngModel minlength="40" maxlength="40" required value="{{veiculo?.chassi}}" />
+          <div *ngIf="chassi.errors?.required && chassi.touched" class="error">
+            O chassi é obrigatório
+          </div>
+        </div>
+      <div class="form-group col-md-4">
+        <label>Data Cadastro:</label>
+        <input id="dataCadastro" name="dataCadastro" type="text" class="form-control" #dataCadastro="ngModel" ngModel minlength="10" maxlength="10" required value="{{veiculo?.dataCadastro}}" onkeydown="javascript: fMasc( this, mData );" />
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Data Desativação:</label>
+            <input id="dataDesativacao" name="dataDesativacao" type="text" class="form-control datetime_plugi" #dataDesativacao="ngModel" ngModel minlength="10" maxlength="10" required value="{{veiculo?.dataDesativacao}}" onkeydown="javascript: fMasc( this, mData );" />
+          </div>
+      <div class="form-group col-md-4">
+        <label>Modelo:</label>
+        <input id="modelo" name="modelo" type="text" class="form-control" #modelo="ngModel" ngModel minlength="3" value="{{veiculo?.modelo}}" required/>
+        <div *ngIf="modelo.errors?.required && modelo.touched" class="error">
+          Modelo inválido
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label>Cor:</label>
+        <input id="cor" name="cor" type="text" class="form-control" #cor="ngModel" ngModel minlength="3" value="{{veiculo?.cor}}" required/>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label>Consumo médio (km):</label>
+            <input id="consumoMedioKm" name="consumoMedioKm" type="text" class="form-control datetime_plugi" #consumoMedioKm="ngModel" ngModel minlength="1" required value="{{veiculo?.consumoMedioKm}}" />
+            <div *ngIf="consumoMedioKm.errors?.required && consumoMedioKm.touched" class="error">
+              Forneça um consumo médio
+            </div>
+          </div>
+      <div class="form-group col-md-4">
+        <label>Quantidade passageiros:</label>
+        <input id="quantidadePassageiros" name="quantidadePassageiros" type="text" class="form-control" #quantidadePassageiros="ngModel" ngModel minlength="1" value="{{veiculo?.quantidadePassageiros}}" required/>
+        <div *ngIf="quantidadePassageiros.errors?.required && quantidadePassageiros.touched" class="error">
+            Forneça a quantidade de passageiros
+        </div>
+      </div>
+    </div>
+    <div class="campo_botoes">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <button id="salvar" class="btn btn-info botao-novo" type="submit" [disabled]="f.invalid"><i class="fas fa-save"></i>&nbsp;&nbsp;Salvar</button>
+          <button id="cancelar" class="btn btn-danger botao-cancelar" [routerLink]="['/veiculo']"><i class="fas fa-times-circle"></i>&nbsp;&nbsp;Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

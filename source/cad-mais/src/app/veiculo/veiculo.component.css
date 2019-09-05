@@ -1,0 +1,94 @@
+.container-pagina-tabela{
+  margin-top: 60px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.tabela-dados{
+  margin-top: 10px;
+}
+
+.texto-titulo-tabela{
+  text-align: center;
+  width: 100%;
+  font-size: 22px;
+  color: #e0a61c;
+  font-weight: bold;
+}
+
+.cabecalho-tabela{
+  background: #f9f9f9;
+  color: #17b1cd;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alinhamento-direito{
+  text-align: right;
+}
+
+.alinhamento-centro{
+  text-align: center;
+}
+
+.alinhamento-esquerdo{
+  text-align: left;
+}
+
+.corpo-tabela{
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.botao-novo{
+  width: 160px;
+  height: 40px;
+  padding: 10px;
+}
+
+.botao-relatorio{
+  width: 160px;
+  height: 40px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.botao-cancelar{
+  width: 160px;
+  height: 40px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.btn-danger{
+  background: #ff7f65 !important;
+}
+
+.error{
+  color: #ff7f65 !important;
+}
+
+.container-campo-pesquisa{
+  width: 250px;
+  float: right;
+  height: 40px;
+}
+
+.campo-pesquisa{
+  border-color: #17b1cd;
+}
+
+.container-formulario{
+  margin-top: 60px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form-control:hover{
+  border-color: #17b1cd;
+}
+
+.form-control:focus{
+  border-color: #17b1cd;
+}

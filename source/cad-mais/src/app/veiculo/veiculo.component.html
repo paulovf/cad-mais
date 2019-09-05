@@ -1,1 +1,44 @@
-<p>veiculo works!</p>
+<div class="container-pagina-tabela">
+  <label class="texto-titulo-tabela">Veículos</label>
+  <div class="container-botoes-pesquisa">
+    <button id="novo" [routerLink]="['/novo_veiculo']" class="btn btn-info botao-novo"><i class="fas fa-file"></i>&nbsp;&nbsp;Novo Veículo</button>
+    <button id="relatorio" [routerLink]="['/relatorio_veiculo']" class="btn btn-secondary botao-relatorio"><i class="fas fa-print"></i>&nbsp;&nbsp;Relatório</button>
+    <div class="input-group mb-3 container-campo-pesquisa">
+      <div class="input-group-prepend fundo-azul">
+        <span class="input-group-text fundo-azul" id="basic-addon1"><i class="fas fa-search branco"></i></span>
+      </div>
+      <input type="text" class="form-control campo-pesquisa" placeholder="Pesquisar..." id="campo-pesquisa" onkeyup="pesquisaTabela();">
+    </div>
+  </div>
+
+  <table id="tabela-dados" class="table table-bordered tabela-dados">
+      <tr class="cabecalho-tabela">
+        <th>ID</th>
+        <th>Placa</th>
+        <th>Ano Fabric.</th>
+        <th>Ano Mod.</th>
+        <th>Chassi</th>
+        <th>Dt. Cadastro</th>
+        <th>Dt. Desativação</th>
+        <th>Modelo</th>
+        <th>Cor</th>
+        <th>Consumo (km)</th>
+        <th>Qtde. Passageiros</th>
+        <th>Ativo</th>
+      </tr>
+      <tr class="corpo-tabela" *ngFor="let veic of veiculos" (click)="editarVeiculo(veic.idVeiculo)">
+        <td class="alinhamento-centro">{{veic.idVeiculo}}</td>
+        <td class="alinhamento-centro">{{veic.placa}}</td>
+        <td class="alinhamento-centro">{{veic.anoFabricacao}}</td>
+        <td class="alinhamento-centro">{{veic.anoModelo}}</td>
+        <td class="alinhamento-centro">{{veic.chassi}}</td>
+        <td class="alinhamento-centro">{{veic.dataCadastro}}</td>
+        <td class="alinhamento-centro">{{veic.dataDesativacao}}</td>
+        <td class="alinhamento-centro">{{veic.modelo}}</td>
+        <td class="alinhamento-centro">{{veic.cor}}</td>
+        <td class="alinhamento-esquerdo">{{veic.consumoMedioKm}}</td>
+        <td class="alinhamento-esquerdo">{{veic.quantidadePassageiros}}</td>
+        <td class="alinhamento-centro">{{veic.ativo}}</td>
+      </tr>
+    </table>
+</div>

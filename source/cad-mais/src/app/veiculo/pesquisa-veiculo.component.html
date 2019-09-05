@@ -1,0 +1,52 @@
+<div class="container-formulario">
+    <label class="texto-titulo-tabela">Pesquisa de veículos</label><br />
+  <form #f="ngForm" (ngSubmit)="pesquisar(f)">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Placa:</label>
+        <input id="placa" name="placa" type="text" class="form-control" #placa="ngModel" ngModel minlength="7" maxlength="8" />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Modelo:</label>
+        <input id="modelo" name="modelo" type="text" class="form-control" #modelo="ngModel" ngModel minlength="2" />
+      </div>
+    </div>
+    <div class="campo_botoes">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <button id="pesquisar" type="submit" class="btn btn-info botao-novo"><i class="fas fa-search"></i>&nbsp;&nbsp;Pesquisar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <table id="tabela-dados" class="table table-bordered tabela-dados">
+    <tr class="cabecalho-tabela">
+      <th>ID</th>
+      <th>Placa</th>
+      <th>Ano Fabric.</th>
+      <th>Ano Mod.</th>
+      <th>Chassi</th>
+      <th>Dt. Cadastro</th>
+      <th>Dt. Desativação</th>
+      <th>Modelo</th>
+      <th>Cor</th>
+      <th>Consumo (km)</th>
+      <th>Qtde. Passageiros</th>
+      <th>Ativo</th>
+    </tr>
+    <tr class="corpo-tabela" *ngFor="let veic of veiculos">
+      <td class="alinhamento-centro">{{veic.idVeiculo}}</td>
+      <td class="alinhamento-centro">{{veic.placa}}</td>
+      <td class="alinhamento-centro">{{veic.anoFabricacao}}</td>
+      <td class="alinhamento-centro">{{veic.anoModelo}}</td>
+      <td class="alinhamento-centro">{{veic.chassi}}</td>
+      <td class="alinhamento-centro">{{veic.dataCadastro}}</td>
+      <td class="alinhamento-centro">{{veic.dataDesativacao}}</td>
+      <td class="alinhamento-centro">{{veic.modelo}}</td>
+      <td class="alinhamento-centro">{{veic.cor}}</td>
+      <td class="alinhamento-esquerdo">{{veic.consumoMedioKm}}</td>
+      <td class="alinhamento-esquerdo">{{veic.quantidadePassageiros}}</td>
+      <td class="alinhamento-centro">{{veic.ativo}}</td>
+    </tr>
+  </table>
+</div>

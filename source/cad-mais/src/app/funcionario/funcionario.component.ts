@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FuncionarioService} from './funcionario.service';
 import {Funcionario} from './Funcionario.type';
 import { Response } from '@angular/http';
-import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-funcionario',
@@ -12,7 +12,7 @@ import {NgForm} from '@angular/forms';
 })
 export class FuncionarioComponent implements OnInit {
   funcionarios: Funcionario[] = [];
-  constructor(private funcionarioService: FuncionarioService) {
+  constructor(private funcionarioService: FuncionarioService, private router: Router) {
     /*let func = new Funcionario();
     func.id = 1;
     func.nome = 'Ulisses Costa';
@@ -56,7 +56,6 @@ export class FuncionarioComponent implements OnInit {
   listarFuncionarios() {
     this.funcionarioService.listar()
       .subscribe((response: Response) => {
-        console.log(response);
         this.funcionarios = response.json();
       });
     /*console.log('222');
@@ -76,5 +75,9 @@ export class FuncionarioComponent implements OnInit {
         this.funcionarios.push(func);
       }
     });*/
+  }
+
+  editarFuncionario(idFuncionario: String){
+    this.router.navigateByUrl('novo_funcionario?id_funcionario=' + idFuncionario);
   }
 }
